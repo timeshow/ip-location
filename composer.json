@@ -1,0 +1,22 @@
+{
+    "name": "timeshow/ip-location",
+    "description": "ip-location for laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "timeshow",
+            "email": "397975896@qq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "TimeShow\\IpLocation\\": "src/"
+        }
+    }
+}
