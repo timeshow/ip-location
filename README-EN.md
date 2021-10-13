@@ -9,7 +9,7 @@
  
  
  ## Install
-Composer 安装
+Composer
  
  ``` bash
  $ composer require timeshow/ip-location
@@ -32,7 +32,7 @@ add the `IpLocationServiceProvider` to your `config/app.php`:
   ```
  
  
- ## 如何使用？
+ ## How To Use
  
  ```php
    use TimeShow\IpLocation\IpLocation;
@@ -44,12 +44,4 @@ add the `IpLocationServiceProvider` to your `config/app.php`:
    $ipLocation->getCity('X.X.X.X');
    $ipLocation->getArea('X.X.X.X');
 
-```
-
-### PS Q&A
-1、返回结果出现中文乱码？
-```php
-$ipLocation = new IpLocation();
-$location = $ipLocation->getLocation('X.X.X.X');
-mb_convert_encoding($location, "UTF-8", "gbk");
 ```

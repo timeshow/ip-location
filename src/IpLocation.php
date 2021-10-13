@@ -38,7 +38,7 @@ class IpLocation implements IpLocationInterface {
      * @param string $filename
      * @return IpLocation
      */
-    public function __construct($filename = __DIR__ . "database/qqwry.dat")
+    public function __construct($filename = __DIR__ . "/database/qqwry.dat")
     {
         $this->fp = 0;
         if (($this->fp = fopen($filename, 'rb')) !== false) {
