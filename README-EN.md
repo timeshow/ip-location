@@ -35,13 +35,23 @@ add the `IpLocationServiceProvider` to your `config/app.php`:
  ## How To Use
  
  ```php
-   use TimeShow\IpLocation\IpLocation;
+    use TimeShow\IpLocation\IpLocation;
+ 
+    $ipLocation = new IpLocation();
+    $ipLocation->getLocation('X.X.X.X'); 
+    $ipLocation->getArea('X.X.X.X');  
+    $ipLocation->getCountry('X.X.X.X');
+    $ipLocation->getProvince('X.X.X.X');
+    $ipLocation->getCity('X.X.X.X');
+    $ipLocation->getCounty('X.X.X.X');
+    $ipLocation->getISP('X.X.X.X');          
+ 
+ ```
 
-   $ipLocation = new IpLocation();
-   $ipLocation->getLocation('X.X.X.X');   
-   $ipLocation->getContry('X.X.X.X');
-   $ipLocation->getProvince('X.X.X.X');
-   $ipLocation->getCity('X.X.X.X');
-   $ipLocation->getArea('X.X.X.X');
-
+### PS Q&A
+1. Chinese garbled code appears in the returned result?
+```php
+$ipLocation = new IpLocation();
+$location = $ipLocation->getLocation('X.X.X.X');
+mb_convert_encoding($location, "UTF-8", "gbk");
 ```

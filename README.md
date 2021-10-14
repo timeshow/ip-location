@@ -1,6 +1,6 @@
 #ip-location for Laravel
 
-## Version Compatibility
+## 版本兼容性
 
  Laravel      | Package
 :-------------|:--------
@@ -38,11 +38,13 @@ add the `IpLocationServiceProvider` to your `config/app.php`:
    use TimeShow\IpLocation\IpLocation;
 
    $ipLocation = new IpLocation();
-   $ipLocation->getLocation('X.X.X.X');   
-   $ipLocation->getContry('X.X.X.X');
+   $ipLocation->getLocation('X.X.X.X'); 
+   $ipLocation->getArea('X.X.X.X');  
+   $ipLocation->getCountry('X.X.X.X');
    $ipLocation->getProvince('X.X.X.X');
    $ipLocation->getCity('X.X.X.X');
-   $ipLocation->getArea('X.X.X.X');
+   $ipLocation->getCounty('X.X.X.X');
+   $ipLocation->getISP('X.X.X.X');          
 
 ```
 

@@ -25,6 +25,14 @@ interface IpLocationInterface {
      * @param string $ip
      * @return string
      */
+    public function getAddress($ip = '');
+
+    /**
+     *
+     * @access Public
+     * @param string $ip
+     * @return string
+     */
     public function getCountry($ip = '');
 
     /**

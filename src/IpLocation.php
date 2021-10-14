@@ -4,8 +4,8 @@ namespace TimeShow\IpLocation;
 
 use TimeShow\IpLocation\Interfaces\IpLocationInterface;
 
-class IpLocation implements IpLocationInterface {
-
+class IpLocation implements IpLocationInterface
+{
     /**
      * 获取地址信息
      * @access Public
@@ -15,7 +15,7 @@ class IpLocation implements IpLocationInterface {
     public function getLocation($ip = '')
     {
         $ipLocation = new QQWry();
-        return $ipLocation->getLocation();
+        return $ipLocation->getLocation($ip);
     }
 
     /**
@@ -24,10 +24,19 @@ class IpLocation implements IpLocationInterface {
      * @param string $ip
      * @return string
      */
-    public function getarea($ip = '')
+    public function getArea($ip = '')
     {
-        $ipLocation = new QQWry();
-        return $ipLocation->getarea();
+        return $this->getLocation($ip)['area'];
+    }
+
+    /**
+     * 获取地址信息
+     * @access Public
+     * @param string $ip
+     * @return string
+     */
+    public function getAddress($ip = ''){
+        return $this->getLocation($ip)['address'];
     }
 
     /**
@@ -37,7 +46,7 @@ class IpLocation implements IpLocationInterface {
      * @return string
      */
     public function getCountry($ip = ''){
-
+        return $this->getLocation($ip)['country'];
     }
 
     /**
@@ -47,7 +56,7 @@ class IpLocation implements IpLocationInterface {
      * @return string
      */
     public function getProvince($ip = ''){
-
+        return $this->getLocation($ip)['province'];
     }
 
     /**
@@ -57,7 +66,7 @@ class IpLocation implements IpLocationInterface {
      * @return string
      */
     public function getCity($ip = ''){
-
+        return $this->getLocation($ip)['city'];
     }
 
     /**
@@ -67,7 +76,7 @@ class IpLocation implements IpLocationInterface {
      * @return string
      */
     public function getCounty($ip = ''){
-
+        return $this->getLocation($ip)['county'];
     }
 
     /**
@@ -77,10 +86,8 @@ class IpLocation implements IpLocationInterface {
      * @return string
      */
     public function getISP($ip = ''){
-
+        return $this->getLocation($ip)['isp'];
     }
-
-
 
 
 
